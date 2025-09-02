@@ -283,6 +283,8 @@ ut-text h3 {
     color: var(--primary-color);
     border: none;
     font-size: 1rem;
+    margin-bottom:2px;
+    
 }
 .btn-form:hover {
     opacity: 0.9;
