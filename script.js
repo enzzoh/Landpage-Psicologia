@@ -20,12 +20,23 @@
 });
 
 
- function sendmail(){
+function sendmail() {
+   
+    var nome = document.getElementById('Nomecomp').value;
+    var email = document.getElementById('emailget').value; 
 
-         var email = document.getElementById('emailget');
-         console.log(email)
-         var name = document.getElementById('nomecomp');
-         console.log(name)
-         window.open('mailto:andreacarlapsi@outlook.com?subject=Agendar Consulta&body=Gostaria de agendar uma consulta(teste)');
-
+   
+    if (nome === '' || email === '') {
+        alert('Por favor, preencha seu nome e e-mail.');
+        return; 
     }
+
+   
+    var corpoDoEmail = `Olá, sou ${nome} e gostaria de marcar uma consulta.\n\nMeu e-mail para contato é: ${email}`;
+
+  
+    var linkMailto = `mailto:andreacarlapsi@outlook.com?subject=Agendar Consulta&body=${encodeURIComponent(corpoDoEmail)}`;
+
+    
+    window.open(linkMailto);
+}
